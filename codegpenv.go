@@ -1,4 +1,4 @@
-package codegpenv
+package env
 
 import "os"
 
