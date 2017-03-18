@@ -5,6 +5,7 @@ import "os"
 var (
 	isLocal         bool
 	gcloudProjectID string
+	dataStoreHost   string
 )
 
 // Lang is a type to represent a language supported by codegp
@@ -32,6 +33,7 @@ const (
 func init() {
 	isLocal = os.Getenv("IS_LOCAL") == "true"
 	gcloudProjectID = os.Getenv("GCLOUD_PROJECT_ID")
+	dataStoreHost = os.Getenv("DATASTORE_EMULATOR_HOST")
 }
 
 // IsLocal returns true if running locally
@@ -42,4 +44,9 @@ func IsLocal() bool {
 // GCloudProjectID returns the google cloud project identifer
 func GCloudProjectID() string {
 	return gcloudProjectID
+}
+
+// DataStoreHost returns the datastore host
+func DataStoreHost() string {
+	return dataStoreHost
 }
